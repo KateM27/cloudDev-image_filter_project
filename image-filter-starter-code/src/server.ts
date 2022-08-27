@@ -32,7 +32,7 @@ app.get("/filteredimage", async ( req, res ) => {
   let { image_url } = req.query.image_url;
 
   if (!image_url) {
-    return res.status(400).send("Image URL required");
+    return res.send("Image URL required");
   }
 
   const filteredpath = await filterImageFromURL(image_url);
